@@ -15,7 +15,16 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author 850354
  */
+
+
+
+
+
+
 public class AgeCalculatorServlet extends HttpServlet {
+    
+    
+    
 
   @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -28,6 +37,27 @@ public class AgeCalculatorServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String AgeNumba = request.getParameter("AgeNumber");
+        
+        request.setAttribute("AgeNumba", AgeNumba);
+        
+        //validating if the user has inputted any 
+        if(!isNumeric(AgeNumba)){
+            
+        }
+        
         
     }
+    
+    //found how to use this method on the stringUtils package
+public static boolean isNumeric(String numberInput){
+
+//checks if there is no number or user input in the field
+ if( numberInput== null || numberInput.equals("")){
+   //shows the meesage to the user 
+   System.out.println("You must give your current age");
+return false;
+}
+ return false;
+}
 }
