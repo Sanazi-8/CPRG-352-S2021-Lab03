@@ -41,23 +41,38 @@ public class AgeCalculatorServlet extends HttpServlet {
         
         request.setAttribute("AgeNumba", AgeNumba);
         
-        //validating if the user has inputted any 
+        //validating if the user has inputted any numeric values
         if(!isNumeric(AgeNumba)){
-            
+            //this line gets the id we for the error from the ${---} in jsp code 
+            request.setAttribute("Message", "You must enter a number.");
+            //send it to display on user's webpage
+            getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
         }
+        
         
         
     }
     
     //found how to use this method on the stringUtils package
 public static boolean isNumeric(String numberInput){
-
+ 
 //checks if there is no number or user input in the field
  if( numberInput== null || numberInput.equals("")){
-   //shows the meesage to the user 
+   //shows this meesage to the user
    System.out.println("You must give your current age");
 return false;
 }
+ 
+ //by parsing the string inside this method's parameter we make sure it is working and is 
+ // ready for validating any value we want -> throws exeption if the value is not
+//numeric value 
+
+   
+ try{
+    double testNumber = Double.parseDouble(numberInput);
+ } catch (NumberFormatException e){
+     return false;
+ }  
  return false;
 }
 }
