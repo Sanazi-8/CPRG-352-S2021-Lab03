@@ -16,11 +16,11 @@
         
         <form method="post"
     <lable>First: </lable>
-    <input type="number" name="firstNumber" min="1" max="100" 
+    <input type="text" name="firstNumber" min="1" max="100" 
            placeholder=" A numeric value">  </input>
     <br>
     <lable>Second: </lable>
-    <input type="number" name="lastNumber" min="1" max="100" 
+    <input type="text" name="lastNumber" min="1" max="100" 
            placeholder=" A numeric value">  </input>
     <br>
     
