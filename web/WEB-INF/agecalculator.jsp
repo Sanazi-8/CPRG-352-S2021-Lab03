@@ -26,7 +26,7 @@
     %>
     </form>
     
-    <a href=""> Arithmetic Calculator</a>
+    <a href="/Lab3/arithmetic"> Arithmetic Calculator</a>
     
     <p> ${Message} </p>
     <p> ${AgeMessage} </p>
