@@ -25,10 +25,10 @@
     <br>
     
     
-  <input type="submit" value="+" name="mathematics"> </input>
-  <input type="submit" value="-" name="mathematics"> </input>
-  <input type="submit" value="*" name="mathematics"> </input>
-  <input type="submit" value="%" name="mathematics"> </input>
+  <input type="submit" value="+" name="add"> </input>
+  <input type="submit" value="-" name="minus"> </input>
+  <input type="submit" value="*" name="multiply"> </input>
+  <input type="submit" value="%" name="modules"> </input>
    
   
   

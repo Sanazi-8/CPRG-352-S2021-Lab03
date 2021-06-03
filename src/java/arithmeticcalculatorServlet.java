@@ -27,38 +27,83 @@ public class arithmeticcalculatorServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         //creating the string
         String fNumber = request.getParameter("firstNumber");
         String lNumber = request.getParameter("lastNumber");
-        String  math  = request.getParameter("mathematics");
         
+        int resultant =0;
         //set attributes for the JSP 
         request.setAttribute("fNumber",fNumber);
         request.setAttribute("lNumber",lNumber);
         
         if( fNumber == null || fNumber.equals("") || lNumber == null || lNumber.equals("")){
             // this will display the result of the operation to the user
-            request.setAttribute("result", "Invalid");
+            request.setAttribute("result", "---");
             //this will forward the request to the JSP specified and displays the form
             getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request,response);
             return;//stops code
         }
         //initialize a variable to use in the Switch statement
-        int resultant =0; 
+         
         try{
+            
+            String plus  = request.getParameter("add");
+            String minus = request.getParameter("minus");
+            String multiplication = request.getParameter("multiply");
+            String modules = request.getParameter("modules");
+            
             //parse the number into integers since we want to use them as numbers 
             //and not strings
             int firstNumber = Integer.parseInt(fNumber);
             int secondNumber = Integer.parseInt(lNumber);
             
-            //create a switch statement to go thru each math operation and decide 
-            //what to do for each button/submit
-           switch (buttons){
-               case"+":
-                   
-           } 
-        }catch()
+               //if statement for plus
+               //checking if the user has selected them first 
+               if (plus !=null){
+               resultant =  firstNumber + secondNumber;
+                 
+               }
+                 //if statement for minus
+               //checking if the user has selected them first
+               // && firstNumber> secondNumber
+               //  } else {
+                      // request.setAttribute("result", "make sure the first number is "
+                              // + "greater please"); 
+                   //}
+               
+               else if (minus !=null ){
+                resultant =  firstNumber - secondNumber;
+                 
+                 
+               }
+                  //if statement for multiplication
+               //checking if the user has selected them first
+                  else if (multiplication !=null ){
+                resultant =  firstNumber * secondNumber;
+                
+                 
+                  }
+               
+                  else if (modules !=null){
+                resultant =  firstNumber % secondNumber;
+                 
+                
+        }
+                //setting the attribite for the result of the operation
+                 request.setAttribute("result", resultant); 
+               getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response);  
+           }
+              
+          catch (NumberFormatException ex){
+    // this will display the result of the operation to the user
+            request.setAttribute("result", "Invalid");
+            
+            getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response);  
+    
         
     }
+    }
 
-}
+
+
