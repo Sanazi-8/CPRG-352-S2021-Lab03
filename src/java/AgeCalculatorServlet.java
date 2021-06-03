@@ -52,13 +52,6 @@ public class AgeCalculatorServlet extends HttpServlet {
     //found how to use this method on the stringUtils package
     public static boolean isNumeric(String numberInput) {
 
-//checks if there is no number or user input in the field
-        if (numberInput == null || numberInput.equals("")) {
-            //shows this meesage to the user
-            System.out.println("You must give your current age");
-            return false;
-        }
-
         //by parsing the string inside this method's parameter we make sure it is working and is 
         // ready for validating any value we want -> throws exeption if the value is not
 //numeric value 
