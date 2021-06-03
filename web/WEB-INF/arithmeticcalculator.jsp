@@ -16,11 +16,11 @@
         
         <form method="post"
     <lable>First: </lable>
-    <input type="number" name="FirstNumber" min="1" max="100" 
+    <input type="number" name="firstNumber" min="1" max="100" 
            placeholder=" A numeric value">  </input>
     <br>
-    <lable>Last: </lable>
-    <input type="number" name="LastNumber" min="1" max="100" 
+    <lable>Second: </lable>
+    <input type="number" name="lastNumber" min="1" max="100" 
            placeholder=" A numeric value">  </input>
     <br>
     
@@ -34,13 +34,12 @@
   
     </form>
            
-    <% https://www.w3schools.com/html/html_links.asp for the hyperlink learning
-    %>
+   
     
     <a href="/Lab3/Age"> Age Calculator</a>
      
     
-    <p> Result: ${Result} </p>
+    <p> Result: ${result} </p>
     
     </body>
 </html>
