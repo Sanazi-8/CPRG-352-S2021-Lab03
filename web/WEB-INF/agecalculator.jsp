@@ -14,17 +14,23 @@
     <body>
         
         <h1>Age Calculator</h1>
+        
+        <form method="post"
     <lable>Enter Your Age: </lable>
-    <input type="number" name="AgeNumber" min="1" max="100" autofocus 
+    <input type="number" name="AgeNumber" min="1" max="100" 
            placeholder=" A numeric value">  </input>
-           
+    <br>
     <input type="submit" value="Age Next Birthday"> </input>
-    <p> Your Age next birthday will be ${ageNext}></p>
-    
+    <br>
     <% https://www.w3schools.com/html/html_links.asp for the hyperlink learning
     %>
+    </form>
     
     <a href=""> Arithmetic Calculator</a>
+    
+    <p> ${Message} </p>
+    <p> ${AgeMessage} </p>
+    
     
     </body>
 </html>
